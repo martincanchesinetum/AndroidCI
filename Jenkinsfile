@@ -33,7 +33,7 @@ def isDeployCandidate() {
 
 pipeline {
     agent { 
-        docker {image 'note:16-alpine'} 
+        docker {image 'node:16-alpine'} 
     }
     environment {
         appName = 'jenkins-blog'
