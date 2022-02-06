@@ -32,7 +32,11 @@ def isDeployCandidate() {
 }
 
 pipeline {
-    agent { dockerfile true  }
+    agent { 
+        docker{
+            image: '40c8cc60634d12ce085330a07a1cb3265bc21c29'
+        } 
+    }
     environment {
         appName = 'jenkins-blog'
 
