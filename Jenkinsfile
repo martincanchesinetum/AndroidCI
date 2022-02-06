@@ -33,7 +33,7 @@ def isDeployCandidate() {
 
 pipeline {
     agent { 
-        docker {image '40c8cc60634d12ce085330a07a1cb3265bc21c29'} 
+        docker {image 'note:16-alpine'} 
     }
     environment {
         appName = 'jenkins-blog'
@@ -46,6 +46,7 @@ pipeline {
     stages {
         stage('Run Tests') {
             steps {
+                echo sh 'node --version'
                 echo 'Running Tests'
                 script {
                     VARIANT = getBuildType()
