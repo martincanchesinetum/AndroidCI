@@ -46,7 +46,7 @@ pipeline {
     stages {
         stage('Run Tests') {
             steps {
-                echo sh 'node --version'
+                echo 'node --version'
                 echo 'Running Tests'
                 script {
                     VARIANT = getBuildType()
