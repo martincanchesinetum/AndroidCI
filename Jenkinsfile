@@ -32,24 +32,25 @@ def isDeployCandidate() {
 }
 
 pipeline {
-    agent { 
-        docker {image 'node:16-alpine'} 
+    /*agent { 
+        docker {image 'demoandroid'}
+    }*/
+    
+    agent {
+        node{
+            label 'master'
+        }
     }
-    environment {
-        appName = 'jenkins-blog'
-
-        KEY_PASSWORD = credentials('keyPassword')
-        KEY_ALIAS = credentials('keyAlias')
-        KEYSTORE = credentials('keystore')
-        STORE_PASSWORD = credentials('storePassword')
-    }
+    
     stages {
         stage('Run Tests') {
             steps {
-                echo 'node --version'
                 echo 'Running Tests'
                 script {
                     VARIANT = getBuildType()
+                    sh '''#!/bin/bash
+                            hostname 
+                        '''
                     sh "./gradlew test${VARIANT}UnitTest"
                 }
             }
