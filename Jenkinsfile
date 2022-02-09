@@ -51,7 +51,7 @@ pipeline {
                     sh '''#!/bin/bash
                             hostname 
                         '''
-                    sh "./gradlew test${VARIANT}UnitTest"
+                    sh "/project/project/gradlew test${VARIANT}UnitTest"
                 }
             }
         }
@@ -61,7 +61,7 @@ pipeline {
                 echo 'Building'
                 script {
                     VARIANT = getBuildType()
-                    sh "./gradlew -PstorePass=${STORE_PASSWORD} -Pkeystore=${KEYSTORE} -Palias=${KEY_ALIAS} -PkeyPass=${KEY_PASSWORD} bundle${VARIANT}"
+                    sh "/project/project/gradlew -PstorePass=${STORE_PASSWORD} -Pkeystore=${KEYSTORE} -Palias=${KEY_ALIAS} -PkeyPass=${KEY_PASSWORD} bundle${VARIANT}"
                 }
             }
         }
