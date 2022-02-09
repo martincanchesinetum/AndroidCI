@@ -28,6 +28,6 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2" \
     "platform-tools"
 
 #Copy source code
-COPY . $HOME/src
+COPY /home/user1/app $HOME/src
 
 CMD ["/bin/bash"]
