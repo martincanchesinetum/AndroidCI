@@ -32,15 +32,15 @@ def isDeployCandidate() {
 }
 
 pipeline {
-    /*agent { 
+    agent { 
         docker {image 'demoandroid'}
-    }*/
+    }
     
-    agent {
+    /*agent {
         node{
             label 'master'
         }
-    }
+    }*/
     
     stages {
         stage('Run Tests') {
