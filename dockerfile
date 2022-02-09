@@ -6,7 +6,6 @@ WORKDIR project/
 
 #Copy source code
 RUN ls -ltr
-RUN ls -ltr app
 COPY app $HOME/src
-
+RUN ls -ltr app
 CMD ["/bin/bash"]
