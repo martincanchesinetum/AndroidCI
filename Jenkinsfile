@@ -40,7 +40,7 @@ pipeline {
         node{
             label 'master'
         }
-    }*/
+    }
     
     stages {
         stage('Run Tests') {
@@ -54,9 +54,9 @@ pipeline {
                     sh "/project/project/gradlew test${VARIANT}UnitTest"
                 }
             }
-        }
+        }*/
         stage('Build Bundle') {
-            when { expression { return isDeployCandidate() } }
+            //when { expression { return isDeployCandidate() } }
             steps {
                 echo 'Building'
                 script {
