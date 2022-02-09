@@ -43,7 +43,7 @@ pipeline {
     }
     
     stages {
-        stage('Run Tests') {
+        /*stage('Run Tests') {
             steps {
                 echo 'Running Tests'
                 script {
@@ -56,7 +56,7 @@ pipeline {
             }
         }*/
         stage('Build Bundle') {
-            //when { expression { return isDeployCandidate() } }
+            /*when { expression { return isDeployCandidate() } }*/
             steps {
                 echo 'Building'
                 script {
