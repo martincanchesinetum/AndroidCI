@@ -40,7 +40,7 @@ pipeline {
         node{
             label 'master'
         }
-    }
+    }*/
     
     stages {
         /*stage('Run Tests') {
