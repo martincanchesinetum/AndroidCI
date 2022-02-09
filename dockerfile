@@ -27,4 +27,7 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2" \
     "platforms;android-${ANDROID_VERSION}" \
     "platform-tools"
 
+#Copy source code
+ADD app $HOME/src
+
 CMD ["/bin/bash"]
