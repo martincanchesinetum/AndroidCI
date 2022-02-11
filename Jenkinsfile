@@ -63,6 +63,7 @@ pipeline {
                     VARIANT = getBuildType()
                     //sh "./gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundleRelease"
                     sh "cd /project"
+                    sh "pwd"
                     sh "./gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundle${VARIANT}"
                 }
             }
