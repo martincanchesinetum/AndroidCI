@@ -61,9 +61,10 @@ pipeline {
                 echo 'Building'
                 script {
                     VARIANT = getBuildType()
+                    sleep 10
                     //sh "./gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundleRelease"
                     sh '''
-                       /project/gradlew assembleDebug
+                       /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assembleDebug
                        '''
                     //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release"
                 }
