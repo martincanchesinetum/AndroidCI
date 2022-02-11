@@ -51,7 +51,7 @@ pipeline {
                     sh '''#!/bin/bash
                             hostname 
                         '''
-                    sh "/project/project/gradlew test${VARIANT}UnitTest"
+                    sh "/project/gradlew test${VARIANT}UnitTest"
                 }
             }
         }*/
@@ -61,7 +61,7 @@ pipeline {
                 echo 'Building'
                 script {
                     VARIANT = getBuildType()
-                    sh "/project/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundleRelease"
+                    sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundleRelease"
                 }
             }
         }
