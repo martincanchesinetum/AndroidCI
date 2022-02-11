@@ -30,5 +30,4 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2" \
 #Copy source code
 RUN ls -ltr
 COPY app .
-RUN ls -ltr project/
 CMD ["/bin/bash"]
