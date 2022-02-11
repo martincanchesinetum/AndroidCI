@@ -62,6 +62,7 @@ pipeline {
                 script {
                     VARIANT = getBuildType()
                     //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundleRelease"
+                    sh "pwd"
                     sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assembleRelease"
                 }
             }
