@@ -30,4 +30,10 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;29.0.2" \
 #Copy source code
 RUN ls -ltr
 COPY app .
+
+RUN cd $ANDROID_HOME/build-tools/31.0.0 \
+  && mv d8 dx \
+  && cd lib  \
+  && mv d8.jar dx.jar
+
 CMD ["/bin/bash"]
