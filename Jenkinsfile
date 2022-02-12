@@ -64,8 +64,7 @@ pipeline {
                     sh "/project/gradlew tasks --debug"
                     /*sh '''
                         pwd
-                       /project/gradlew tasks
-                       /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble --debug
+                       /project/gradlew tasks --debug
                        '''
                        */
                     //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release"
