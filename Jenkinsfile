@@ -61,7 +61,7 @@ pipeline {
                 echo 'Building'
                 script {
                     VARIANT = getBuildType()
-                    sh "/project/gradlew tasks --debug"
+                    sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release"
                     /*sh '''
                         pwd
                        /project/gradlew tasks --debug
