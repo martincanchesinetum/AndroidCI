@@ -63,6 +63,7 @@ pipeline {
                     VARIANT = getBuildType()
                     //sh "./gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd bundleRelease"
                     sh '''
+                       chmod -R 755 ~/.gradle
                        cd /project
                        /project/gradlew tasks
                        /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble
