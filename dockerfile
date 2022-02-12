@@ -36,6 +36,7 @@ RUN cd $ANDROID_HOME/build-tools/31.0.0 \
   && cd lib  \
   && mv d8.jar dx.jar \
   && cd /project  \
-  && /project/gradlew tasks
+  && /project/gradlew tasks \
+  && chmod -R 755 /root/.gradle
 
 CMD ["/bin/bash"]
