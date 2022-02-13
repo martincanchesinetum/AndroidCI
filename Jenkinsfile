@@ -64,19 +64,13 @@ pipeline {
                 echo 'Building'
                 script {
                     VARIANT = getBuildType()
-                    //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release"
-                    sh '''
-                        echo "Soy"
-                        whoami
-                        cd /project
-                       /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble
-                       '''
-                    //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release"
+                    echo "${env.BRANCH_NAME}"
+                    sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble"
                 }
             }
         }
         stage('Deploy App to Store') {
-            when { expression { return isDeployCandidate() } }
+            /*when { expression { return isDeployCandidate() } }*/
             steps {
                 echo 'Deploying'
                 script {
