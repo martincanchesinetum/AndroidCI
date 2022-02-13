@@ -33,7 +33,10 @@ def isDeployCandidate() {
 
 pipeline {
     agent { 
-        docker {image 'demoandroid'}
+        docker {
+            image 'demoandroid'
+            args '-u root:sudo'
+        }
     }
     
     /*agent {
