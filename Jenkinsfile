@@ -35,7 +35,7 @@ pipeline {
     agent { 
         docker {
             image 'demoandroid'
-            args '-u user1:sudo'
+            args '-u root:sudo'
         }
     }
     
@@ -68,6 +68,8 @@ pipeline {
                     sh '''
                         echo "Soy"
                         whoami
+                        cd /project
+                       /project/gradlew tasks
                        /project/gradlew tasks
                        /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release
                        '''
