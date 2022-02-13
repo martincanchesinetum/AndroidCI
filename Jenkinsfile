@@ -69,9 +69,7 @@ pipeline {
                         echo "Soy"
                         whoami
                         cd /project
-                       /project/gradlew tasks
-                       /project/gradlew tasks
-                       /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release
+                       /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble
                        '''
                     //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd release"
                 }
