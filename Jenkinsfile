@@ -64,8 +64,12 @@ pipeline {
                 echo 'Building'
                 script {
                     VARIANT = getBuildType()
-                    echo "${env.BRANCH_NAME}"
-                    sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble"
+                    echo "${VARIANT}"
+                    sh '''
+                        cd /project
+                       /project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble
+                    '''
+                    //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble"
                 }
             }
         }
