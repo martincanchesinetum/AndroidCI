@@ -35,7 +35,7 @@ pipeline {
     agent { 
         docker {
             image 'demoandroid'
-            args '-u root:sudo'
+            args '-u user1:sudo'
         }
     }
     
