@@ -66,8 +66,8 @@ pipeline {
                     VARIANT = getBuildType()
                     echo "${VARIANT}"
                     sh '''
-                        cd /project/app/app
-                       /project/app/app/gradlew bundleRelease
+                        cd /project
+                       /project/gradlew bundleRelease
                     '''
                     //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble"
                 }
