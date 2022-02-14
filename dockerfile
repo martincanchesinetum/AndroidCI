@@ -34,7 +34,7 @@ COPY app .
 RUN cd $ANDROID_HOME/build-tools/31.0.0 \
   && mv d8 dx \
   && cd lib  \
-  && mv d8.jar dx.jar \
+  && mv d8.jar dx.jar
 #  && cd /project  \
 #  && /project/gradlew tasks \
 #  && chmod -R +755 /root/.gradle
