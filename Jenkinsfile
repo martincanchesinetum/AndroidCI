@@ -66,10 +66,7 @@ pipeline {
                     VARIANT = getBuildType()
                     echo "${VARIANT}"
                     sh '''
-                       ls -ltr
-                       ls -ltr app
-                       
-                       
+                       ./app/gradlew bundle
                     '''
                     //./gradlew bundle
                     //./gradlew tasks
