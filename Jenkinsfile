@@ -66,7 +66,8 @@ pipeline {
                     VARIANT = getBuildType()
                     echo "${VARIANT}"
                     sh '''
-                        chmod +777 /project/gradlew
+                       chmod +777 /project/gradlew
+                       /project/gradlew tasks
                        /project/gradlew bundle
                     '''
                     //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble"
