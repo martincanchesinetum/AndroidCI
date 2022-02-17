@@ -35,7 +35,7 @@ pipeline {
     agent { 
         docker {
             image 'demoandroid'
-            args '-u root:sudo'
+            args '-u root:sudo --mount source=temporal,destination=/temporal'
         }
     }
     
@@ -97,16 +97,18 @@ pipeline {
                     }
                     
                     sh '''
+                        ls -ltr /temporal
                         ls -ltr /project
                         ls -ltr /project/app
                         ls -ltr /project/app/build
                         ls -ltr /project/app/build/outputs
                         ls -ltr /project/app/build/outputs/bundle
                         ls -ltr /project/app/build/outputs/bundle/release
+                        sudo cp /project/app/build/outputs/bundle/release/*.aab /temporal
                     '''
                                       
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
-                            filesPattern: "/project/app/build/outputs/bundle/release/*.aab",
+                            filesPattern: "/var/lib/docker/volumes/temporal/_data/*.aab",
                             trackName: TRACK,
                             rolloutPercentage: "100",
                             recentChangeList: [[language: 'en-US', text: CHANGELOG]]
