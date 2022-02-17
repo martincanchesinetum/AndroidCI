@@ -98,6 +98,7 @@ pipeline {
                     
                     sh '''
                         ls -ltr
+                        ls -ltr **/outputs/bundle/release/*.aab
                     '''
                     
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
