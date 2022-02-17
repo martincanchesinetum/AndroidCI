@@ -95,9 +95,13 @@ pipeline {
                         echo "Issue reading CHANGELOG.txt file: ${err.localizedMessage}"
                         CHANGELOG = ''
                     }
-
+                    
+                    sh '''
+                        ls -ltr
+                    '''
+                    
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
-                            filesPattern: "**/outputs/bundle/${VARIANT.toLowerCase()}/*.aab",
+                            filesPattern: "**/outputs/bundle/release/*.aab",
                             trackName: TRACK,
                             rolloutPercentage: "100",
                             recentChangeList: [[language: 'en-US', text: CHANGELOG]]
