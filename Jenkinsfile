@@ -108,7 +108,7 @@ pipeline {
                     '''
                                       
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
-                            filesPattern: "/var/lib/docker/volumes/temporal/_data/*.aab",
+                            filesPattern: "**/outputs/bundle/${VARIANT.toLowerCase()}/*.aab",
                             trackName: TRACK,
                             rolloutPercentage: "100",
                             recentChangeList: [[language: 'en-US', text: CHANGELOG]]
