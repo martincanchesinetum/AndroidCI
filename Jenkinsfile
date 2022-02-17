@@ -104,7 +104,7 @@ pipeline {
                         ls -ltr /project/app/build/outputs
                         ls -ltr /project/app/build/outputs/bundle
                         ls -ltr /project/app/build/outputs/bundle/release
-                        sudo cp /project/app/build/outputs/bundle/release/*.aab /temporal
+                        cp /project/app/build/outputs/bundle/release/*.aab /temporal
                     '''
                                       
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
