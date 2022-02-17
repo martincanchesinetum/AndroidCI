@@ -66,8 +66,8 @@ pipeline {
                     VARIANT = getBuildType()
                     echo "${VARIANT}"
                     sh '''
-                        chmod +777 /project/gradlew
-                       /project/gradlew bundle
+                        chmod +777 ./gradlew
+                       ./gradlew bundle
                     '''
                     //./gradlew bundle
                     //./gradlew tasks
