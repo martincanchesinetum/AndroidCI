@@ -65,13 +65,10 @@ pipeline {
                 script {
                     VARIANT = getBuildType()
                     echo "${VARIANT}"
-                    sh '''
+                    /*sh '''
                         chmod +777 ./gradlew
                        ./gradlew bundle
-                    '''
-                    //./gradlew bundle
-                    //./gradlew tasks
-                    //sh "/project/gradlew -PstorePass=P@ssw0rd -Pkeystore=KeyAndroidCI -Palias=KeyAndroidCI -PkeyPass=P@ssw0rd assemble"
+                    '''*/
                 }
             }
         }
@@ -97,7 +94,7 @@ pipeline {
                     }
                     sh 'ls -ltr ./app/build/outputs/bundle/release'         
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
-                            filesPattern: "./app/build/outputs/bundle/release/*.aab",
+                            filesPattern: "**/build/outputs/bundle/release/*.aab",
                             trackName: TRACK,
                             rolloutPercentage: "100",
                             recentChangeList: [[language: 'en-US', text: CHANGELOG]]
