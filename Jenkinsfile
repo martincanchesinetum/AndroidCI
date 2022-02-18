@@ -97,7 +97,7 @@ pipeline {
                     }
                     sh 'ls -ltr **/outputs/bundle/release'         
                     androidApkUpload googleCredentialsId: 'play-store-credentials',
-                            filesPattern: "**/outputs/bundle/release/*.aab",
+                            filesPattern: "./app/build/outputs/bundle/release/*.aab",
                             trackName: TRACK,
                             rolloutPercentage: "100",
                             recentChangeList: [[language: 'en-US', text: CHANGELOG]]
