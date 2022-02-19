@@ -65,10 +65,10 @@ pipeline {
                 script {
                     VARIANT = getBuildType()
                     echo "${VARIANT}"
-                    /*sh '''
+                    sh '''
                         chmod +777 ./gradlew
                        ./gradlew bundle
-                    '''*/
+                    '''
                 }
             }
         }
