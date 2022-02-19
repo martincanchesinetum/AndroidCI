@@ -28,8 +28,8 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;30.0.2" \
     "platform-tools"
 
 #Copy source code
-RUN ls -ltr
-COPY app .
+#RUN ls -ltr
+#COPY app .
 
 #RUN cd $ANDROID_HOME/build-tools/30.0.2 \
 #  && mv d8 dx \
