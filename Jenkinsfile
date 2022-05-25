@@ -67,7 +67,7 @@ pipeline {
                     echo "${VARIANT}"
                     sh '''
                         chmod +777 ./gradlew
-                       ./gradlew bundle
+                       ./gradlew --profile bundle
                     '''
                 }
             }
